@@ -52,6 +52,7 @@ class FoodPriceView: UIView {
         addButton.layer.borderWidth = 1
         addButton.layer.cornerRadius = 10
         addButton.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMaxXMinYCorner]
+        addButton.setTitleColor(#colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1), for: .highlighted)
         addSubview(addButton)
         addButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
         addButton.rightAnchor.constraint(equalTo: self.rightAnchor, constant: 0).isActive = true
@@ -69,6 +70,7 @@ class FoodPriceView: UIView {
         minusButton.layer.borderWidth = 1
         minusButton.layer.cornerRadius = 10
         minusButton.layer.maskedCorners = [.layerMinXMinYCorner, .layerMinXMaxYCorner]
+        minusButton.setTitleColor(#colorLiteral(red: 1, green: 0.5763723254, blue: 0, alpha: 1), for: .highlighted)
         addSubview(minusButton)
         minusButton.topAnchor.constraint(equalTo: addButton.topAnchor, constant: 0).isActive = true
         minusButton.leftAnchor.constraint(equalTo: priceLabel.rightAnchor, constant: 0).isActive = true

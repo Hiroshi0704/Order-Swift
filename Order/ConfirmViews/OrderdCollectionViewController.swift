@@ -136,9 +136,12 @@ class OrderdCollectionViewController: UICollectionViewController, UICollectionVi
     
     
     // MARK: FooterDelegate
+    let progressView = ProgressView()
     func confirmButtonTapped() {
         print("confirmButtonTapped")
         print("Total: ", getTotalWithTax())
+        progressView.label.text = "¥\(getTotalWithTax())"
+        progressView.show()
     }
     
     
@@ -152,8 +155,6 @@ class OrderdCollectionViewController: UICollectionViewController, UICollectionVi
     
     
 }
-
-
 
 
 

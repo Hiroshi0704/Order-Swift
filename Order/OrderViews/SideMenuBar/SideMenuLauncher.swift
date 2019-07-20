@@ -16,8 +16,8 @@ class SideMenuLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDe
     
     let blackView = UIView()
     let cellId = "cellId"
-    let category = ["beer", "dish", "ice-cream", "pasta"]
-    let categoryIcon = ["beer", "dish", "ice-cream", "pasta"]
+    let category = ["beer", "dish", "pasta", "ice-cream"]
+    let categoryIcon = ["beer", "dish", "pasta", "ice-cream"]
     var delegate: CategoryDelegate? = nil
     
     override init() {

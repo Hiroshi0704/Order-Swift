@@ -16,7 +16,7 @@ class SideMenuCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .lightGray
+        backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         setupViews()
     }
     
@@ -43,13 +43,13 @@ class SideMenuCell: UICollectionViewCell {
     
     override var isSelected: Bool {
         didSet {
-            backgroundColor = isSelected ? .yellow : .lightGray
+            backgroundColor = isSelected ? #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) : #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         }
     }
     
     override var isHighlighted: Bool {
         didSet {
-            backgroundColor = isHighlighted ? .blue : .lightGray
+            backgroundColor = isHighlighted ? #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1) : #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         }
     }
     
