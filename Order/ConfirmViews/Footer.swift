@@ -30,9 +30,6 @@ class Footer: UICollectionReusableView {
         label.textAlignment = .right
         label.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         label.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-//        label.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-//        label.layer.borderWidth = 1
-//        label.layer.cornerRadius = 20
         return label
     }()
     

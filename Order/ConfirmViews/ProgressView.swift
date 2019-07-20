@@ -7,11 +7,16 @@
 
 import UIKit
 
+protocol ProgressViewDelegate {
+    func showProgressFinished()
+}
+
 class ProgressView: NSObject {
     
     let blackView = UIView()
     let progress = UIView()
     let label = UILabel()
+    var delegate: ProgressViewDelegate?
     
     override init() {
         super.init()
@@ -25,7 +30,6 @@ class ProgressView: NSObject {
             blackView.alpha = 0
             blackView.frame = CGRect(x: 0, y: 0, width: window.frame.width, height: window.frame.height)
             window.addSubview(blackView)
-            
             
             progress.addSubview(label)
             label.centerYAnchor.constraint(equalTo: progress.centerYAnchor, constant: 0).isActive = true
@@ -49,7 +53,9 @@ class ProgressView: NSObject {
             UIView.animate(withDuration: 0.5, delay: 3, options: UIView.AnimationOptions(), animations: {
                 self.blackView.alpha = 0
                 self.progress.frame = CGRect(x: x, y: 0 - y - width, width: width, height: height)
-            }, completion: nil)
+            }, completion: { (true) in
+                self.delegate?.showProgressFinished()
+            })
         }
     }
 }

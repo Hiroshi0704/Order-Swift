@@ -12,7 +12,7 @@ protocol OrderdCollectionViewControllerDelegate {
     func sendOrderList(orderList: [Food])
 }
 
-class OrderdCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, FoodPriceViewDelegate, FooterDelegate {
+class OrderdCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, FoodPriceViewDelegate, FooterDelegate, ProgressViewDelegate {
     
     let cellId = "cellId"
     var orderList = [Food]()
@@ -24,8 +24,8 @@ class OrderdCollectionViewController: UICollectionViewController, UICollectionVi
         navigationItem.title = "Your Order"
         collectionView.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         collectionView.register(OrderdCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
-        collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerId)
-        collectionView.register(Footer.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: footerId)
+        collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: ElementKindSectionHeader, withReuseIdentifier: headerId)
+        collectionView.register(Footer.self, forSupplementaryViewOfKind: ElementKindSectionFooter, withReuseIdentifier: footerId)
     }
     
     
@@ -102,18 +102,18 @@ class OrderdCollectionViewController: UICollectionViewController, UICollectionVi
     
     // MARK: Header & Footer
     let headerId = "headerId"
-    let UICollectionElementKindSectionHeader = "UICollectionElementKindSectionHeader"
+    let ElementKindSectionHeader = "UICollectionElementKindSectionHeader"
     let footerId = "footerId"
-    let UICollectionElementKindSectionFooter = "UICollectionElementKindSectionFooter"
+    let ElementKindSectionFooter = "UICollectionElementKindSectionFooter"
     
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         
-        if kind == UICollectionElementKindSectionHeader {
-            let header = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: headerId, for: indexPath)
+        if kind == ElementKindSectionHeader {
+            let header = collectionView.dequeueReusableSupplementaryView(ofKind: ElementKindSectionHeader, withReuseIdentifier: headerId, for: indexPath)
             return header
         } else {
-            let footer = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionFooter, withReuseIdentifier: footerId, for: indexPath) as! Footer
+            let footer = collectionView.dequeueReusableSupplementaryView(ofKind: ElementKindSectionFooter, withReuseIdentifier: footerId, for: indexPath) as! Footer
             footer.delegate = self
             footer.priceLabel.text = "¥\(getTotalWithTax())"
             if orderList.count <= 0 {
@@ -141,6 +141,7 @@ class OrderdCollectionViewController: UICollectionViewController, UICollectionVi
         print("confirmButtonTapped")
         print("Total: ", getTotalWithTax())
         progressView.label.text = "¥\(getTotalWithTax())"
+        progressView.delegate = self
         progressView.show()
     }
     
@@ -151,6 +152,11 @@ class OrderdCollectionViewController: UICollectionViewController, UICollectionVi
             order.num = 0
         }
         collectionView.reloadData()
+    }
+    
+    // MARK: ProgressViewDelegate
+    func showProgressFinished() {
+        navigationController?.popViewController(animated: true)
     }
     
     
