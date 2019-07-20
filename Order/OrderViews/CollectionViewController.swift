@@ -17,6 +17,7 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     
     var foodArray = [Food]()
     var orderList = [Food]()
+    var decidedOrder = [Food]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,6 +84,7 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
         let layout = UICollectionViewFlowLayout()
         let orderdCV = OrderdCollectionViewController(collectionViewLayout: layout)
         orderdCV.orderList = self.orderList
+        orderdCV.decidedOrder = self.decidedOrder
         orderdCV.delegate = self
         self.navigationController?.pushViewController(orderdCV, animated: true)
     }
@@ -125,6 +127,10 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     // MARK: OrderdCollectionViewControllerDelegate
     func sendOrderList(orderList: [Food]) {
         self.orderList = orderList
+    }
+    
+    func sendDecidedOrder(decidedOrder: [Food]) {
+        self.decidedOrder = decidedOrder
     }
 
 }

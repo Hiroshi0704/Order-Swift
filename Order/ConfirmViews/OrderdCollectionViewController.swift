@@ -10,12 +10,14 @@ import UIKit
 
 protocol OrderdCollectionViewControllerDelegate {
     func sendOrderList(orderList: [Food])
+    func sendDecidedOrder(decidedOrder: [Food])
 }
 
 class OrderdCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, FoodPriceViewDelegate, FooterDelegate, ProgressViewDelegate {
     
     let cellId = "cellId"
     var orderList = [Food]()
+    var decidedOrder = [Food]()
     var delegate: OrderdCollectionViewControllerDelegate?
     
     
@@ -39,6 +41,7 @@ class OrderdCollectionViewController: UICollectionViewController, UICollectionVi
             }
         }
         delegate?.sendOrderList(orderList: newOrderList)
+        delegate?.sendDecidedOrder(decidedOrder: decidedOrder)
     }
     
     
@@ -137,12 +140,38 @@ class OrderdCollectionViewController: UICollectionViewController, UICollectionVi
     
     // MARK: FooterDelegate
     let progressView = ProgressView()
+    
     func confirmButtonTapped() {
         print("confirmButtonTapped")
         print("Total: ", getTotalWithTax())
         progressView.label.text = "¥\(getTotalWithTax())"
         progressView.delegate = self
+        addOrder2DecidedOrder()
         progressView.show()
+        
+    }
+    
+    func addOrder2DecidedOrder() {
+        
+        for order in self.orderList {
+            if order.num <= 0 { continue }
+            if decidedOrder.contains(where: { $0 === order }) {
+                order.orderdNum += order.num
+                order.num = 0
+            } else {
+                order.orderdNum += order.num
+                decidedOrder.append(order)
+                order.num = 0
+            }
+        }
+        print(decidedOrder)
+        print(decidedOrder.map({ $0.name }), decidedOrder.map({ $0.orderdNum }))
+    }
+    
+    func cleanOrder() {
+        for order in orderList {
+            order.num = 0
+        }
     }
     
     
@@ -161,9 +190,6 @@ class OrderdCollectionViewController: UICollectionViewController, UICollectionVi
     
     
 }
-
-
-
 
 
 
