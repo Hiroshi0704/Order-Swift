@@ -35,8 +35,6 @@ class FoodPriceView: UIView {
         
         priceLabel.backgroundColor = .clear
         priceLabel.text = "¥"
-//        priceLabel.layer.borderColor = #colorLiteral(red: 0.2549019754, green: 0.2745098174, blue: 0.3019607961, alpha: 1)
-//        priceLabel.layer.borderWidth = 1
         addSubview(priceLabel)
         priceLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 0).isActive = true
         priceLabel.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 0).isActive = true
