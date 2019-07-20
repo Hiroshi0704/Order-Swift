@@ -72,13 +72,21 @@
 			children = (
 				6829471522DF3F510004C58D /* AppDelegate.swift */,
 				9200112322E14A48005A4233 /* Models */,
-				9200112122E149DF005A4233 /* OrderViews */,
-				9200112222E14A16005A4233 /* ConfirmViews */,
+				9200112122E149DF005A4233 /* MenuViews */,
+				9200112222E14A16005A4233 /* OrderViews */,
+				6829472922E355980004C58D /* FinalViews */,
 				6829471C22DF3F520004C58D /* Assets.xcassets */,
 				6829471E22DF3F520004C58D /* LaunchScreen.storyboard */,
 				6829472122DF3F520004C58D /* Info.plist */,
 			);
 			path = Order;
+			sourceTree = "<group>";
+		};
+		6829472922E355980004C58D /* FinalViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FinalViews;
 			sourceTree = "<group>";
 		};
 		9200111E22E05CE4005A4233 /* SideMenuBar */ = {
@@ -90,7 +98,7 @@
 			path = SideMenuBar;
 			sourceTree = "<group>";
 		};
-		9200112122E149DF005A4233 /* OrderViews */ = {
+		9200112122E149DF005A4233 /* MenuViews */ = {
 			isa = PBXGroup;
 			children = (
 				9200111E22E05CE4005A4233 /* SideMenuBar */,
@@ -98,17 +106,17 @@
 				9200111022DFFC4D005A4233 /* CollectionViewCell.swift */,
 				9200111222DFFCC0005A4233 /* FoodPriceView.swift */,
 			);
-			path = OrderViews;
+			path = MenuViews;
 			sourceTree = "<group>";
 		};
-		9200112222E14A16005A4233 /* ConfirmViews */ = {
+		9200112222E14A16005A4233 /* OrderViews */ = {
 			isa = PBXGroup;
 			children = (
 				9200111F22E149D2005A4233 /* OrderdCollectionViewController.swift */,
 				9200112622E1A7C1005A4233 /* Footer.swift */,
 				6829472722E29CE30004C58D /* ProgressView.swift */,
 			);
-			path = ConfirmViews;
+			path = OrderViews;
 			sourceTree = "<group>";
 		};
 		9200112322E14A48005A4233 /* Models */ = {

@@ -28,6 +28,7 @@ class OrderdCollectionViewController: UICollectionViewController, UICollectionVi
         collectionView.register(OrderdCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.register(UICollectionReusableView.self, forSupplementaryViewOfKind: ElementKindSectionHeader, withReuseIdentifier: headerId)
         collectionView.register(Footer.self, forSupplementaryViewOfKind: ElementKindSectionFooter, withReuseIdentifier: footerId)
+        setupNav()
     }
     
     
@@ -69,6 +70,18 @@ class OrderdCollectionViewController: UICollectionViewController, UICollectionVi
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: 125)
+    }
+    
+    func setupNav() {
+//        let cartImage = UIImage(named: "cart")?.withRenderingMode(.alwaysOriginal)
+//        let cartButtonItem = UIBarButtonItem(image: cartImage, style: .plain, target: self, action: #selector(cartButtonTapped))
+//        navigationItem.rightBarButtonItem = cartButtonItem
+        let billButtonItem = UIBarButtonItem(title: "注文履歴", style: .plain, target: self, action: #selector(billButtonTappend))
+        navigationItem.rightBarButtonItem = billButtonItem
+    }
+    
+    @objc func billButtonTappend() {
+        print("billButtonTappend")
     }
     
     
@@ -166,12 +179,6 @@ class OrderdCollectionViewController: UICollectionViewController, UICollectionVi
         }
         print(decidedOrder)
         print(decidedOrder.map({ $0.name }), decidedOrder.map({ $0.orderdNum }))
-    }
-    
-    func cleanOrder() {
-        for order in orderList {
-            order.num = 0
-        }
     }
     
     
