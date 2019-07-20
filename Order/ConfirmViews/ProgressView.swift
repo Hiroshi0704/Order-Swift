@@ -4,7 +4,6 @@
 //
 //  Created by 渡邉　博 on 2019/07/20.
 //  Copyright © 2019 Hiroshi Watanabe. All rights reserved.
-//
 
 import UIKit
 
