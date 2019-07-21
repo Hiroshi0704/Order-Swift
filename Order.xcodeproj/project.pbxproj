@@ -13,6 +13,7 @@
 		6829472022DF3F520004C58D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6829471E22DF3F520004C58D /* LaunchScreen.storyboard */; };
 		6829472822E29CE30004C58D /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6829472722E29CE30004C58D /* ProgressView.swift */; };
 		6829472B22E35E370004C58D /* BillCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6829472A22E35E370004C58D /* BillCollectionViewController.swift */; };
+		6829474D22E43BF60004C58D /* BillCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6829474C22E43BF60004C58D /* BillCollectionViewCell.swift */; };
 		9200111122DFFC4D005A4233 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9200111022DFFC4D005A4233 /* CollectionViewCell.swift */; };
 		9200111322DFFCC0005A4233 /* FoodPriceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9200111222DFFCC0005A4233 /* FoodPriceView.swift */; };
 		9200111522DFFDA8005A4233 /* Food.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9200111422DFFDA8005A4233 /* Food.swift */; };
@@ -32,6 +33,7 @@
 		6829472122DF3F520004C58D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6829472722E29CE30004C58D /* ProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		6829472A22E35E370004C58D /* BillCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillCollectionViewController.swift; sourceTree = "<group>"; };
+		6829474C22E43BF60004C58D /* BillCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BillCollectionViewCell.swift; sourceTree = "<group>"; };
 		9200111022DFFC4D005A4233 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		9200111222DFFCC0005A4233 /* FoodPriceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodPriceView.swift; sourceTree = "<group>"; };
 		9200111422DFFDA8005A4233 /* Food.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Food.swift; sourceTree = "<group>"; };
@@ -88,6 +90,7 @@
 			isa = PBXGroup;
 			children = (
 				6829472A22E35E370004C58D /* BillCollectionViewController.swift */,
+				6829474C22E43BF60004C58D /* BillCollectionViewCell.swift */,
 			);
 			path = FinalViews;
 			sourceTree = "<group>";
@@ -210,6 +213,7 @@
 				9200111B22E02AA0005A4233 /* SideMenuLauncher.swift in Sources */,
 				6829471622DF3F510004C58D /* AppDelegate.swift in Sources */,
 				9200111122DFFC4D005A4233 /* CollectionViewCell.swift in Sources */,
+				6829474D22E43BF60004C58D /* BillCollectionViewCell.swift in Sources */,
 				9200111D22E03909005A4233 /* SideMenuCell.swift in Sources */,
 				6829472822E29CE30004C58D /* ProgressView.swift in Sources */,
 				6829472B22E35E370004C58D /* BillCollectionViewController.swift in Sources */,

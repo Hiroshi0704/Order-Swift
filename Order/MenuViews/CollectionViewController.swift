@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, CategoryDelegate, FoodPriceViewDelegate, OrderdCollectionViewControllerDelegate {
+class CollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout, SideMenuLauncherDelegate, FoodPriceViewDelegate, OrderdCollectionViewControllerDelegate {
 
     let foodModel = FoodModel()
     let foodPriceView = FoodPriceView()
@@ -90,11 +90,19 @@ class CollectionViewController: UICollectionViewController, UICollectionViewDele
     }
     
     
-    // MARK: CategoryDelegate
+    // MARK: SideMenuLauncherDelegate
     func setCategory(category: String) {
         foodArray = foodModel.getFoodArray(category: category)
         collectionView.reloadData()
     }
+    
+    func checkButtonTapped() {
+        let layout = UICollectionViewFlowLayout()
+        let billCV = BillCollectionViewController(collectionViewLayout: layout)
+        billCV.decidedOrder = self.decidedOrder
+        navigationController?.pushViewController(billCV, animated: true)
+    }
+    
     
     
     // MARK: FoodPriceViewDelegate

@@ -8,8 +8,9 @@
 
 import UIKit
 
-protocol CategoryDelegate {
+protocol SideMenuLauncherDelegate {
     func setCategory(category: String)
+    func checkButtonTapped()
 }
 
 class SideMenuLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
@@ -19,7 +20,7 @@ class SideMenuLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDe
     let category = ["beer", "dish", "pasta", "ice-cream"]
     let categoryIcon = ["beer", "dish", "pasta", "ice-cream"]
     let service = ["Check"]
-    var delegate: CategoryDelegate? = nil
+    var delegate: SideMenuLauncherDelegate? = nil
     
     override init() {
         super.init()
@@ -103,6 +104,8 @@ class SideMenuLauncher: NSObject, UICollectionViewDataSource, UICollectionViewDe
         case 1:
             let item = service[indexPath.item]
             print("\(item) tappend")
+            delegate?.checkButtonTapped()
+            handleDismiss()
         default:
             print("error at didSelectItemAt")
             break
