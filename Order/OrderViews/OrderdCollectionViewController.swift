@@ -144,7 +144,7 @@ class OrderdCollectionViewController: UICollectionViewController, UICollectionVi
     func confirmButtonTapped() {
         print("confirmButtonTapped")
         print("Total: ", getTotalWithTax())
-        progressView.label.text = "¥\(getTotalWithTax())"
+        progressView.label.text = "sending..."
         progressView.delegate = self
         addOrder2DecidedOrder()
         progressView.show()

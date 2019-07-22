@@ -30,6 +30,9 @@ class BillCollectionViewController: UICollectionViewController, UICollectionView
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! BillCollectionViewCell
         let food = decidedOrder[indexPath.item]
         cell.foodImageView.image = UIImage(named: food.name)
+        cell.foodNameLabel.text = "\(food.name)"
+        cell.billPriceView.priceLabel.text = "¥\(food.price * food.num)"
+        cell.billPriceView.countLabel.text = "\(food.num)"
         return cell
     }
 
